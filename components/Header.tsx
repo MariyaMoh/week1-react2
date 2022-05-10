@@ -14,7 +14,7 @@ const HTitle = styled.h1`
 
 `;
 const HeaderTop = styled.header`
-
+color:#413F6C;
  display: flex;
   flex-direction: column;
   justify-content: center;

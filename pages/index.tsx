@@ -8,6 +8,23 @@ import { motion } from "framer-motion";
 
 
 
+const SubmitButton = styled.input`
+text-align:center;
+display: inline-block;
+  border-radius: 4px;
+  background-color: #413F6C;
+  border: none;
+  color: #FFFFFF;
+  font-size: 20px;
+t
+  padding: 20px;
+  width: 150px;
+  height:40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px;
+}
+`;
 
 
 const BlogHome = styled.div`
@@ -106,7 +123,7 @@ export default function IndexPage({ post }: IndexPageProps) {
           />
         </div>
         <div>
-          <input type={"submit"} value="submit" />
+          <SubmitButton type={"submit"} value="submit" />
         </div>
       </form>
     </BlogHome>
