@@ -7,16 +7,11 @@ import styled from "styled-components";
 
 
 const NavLink = styled.nav`
-//  padding-right:500px;
- 
-}
+
 `;
 
 const HTitle = styled.h1`
-// padding-right:500px;
 
-
-}
 `;
 const HeaderTop = styled.header`
 
@@ -38,18 +33,25 @@ const HeaderTop = styled.header`
 
 
 export const Header = () => (
-  <HeaderTop>
+  <HeaderTop
+  
+       initial={{ y: -300, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 300, opacity: 0 }}
+  >
+   
     <HTitle>
       <Link href="/">
         <a>Cats Blog</a>
       </Link>
     </HTitle>
+    
     <NavLink>
-        <Link  href="/posts">
-          <a>Posts</a>
+        <Link  href="/">
+          <a style={{margin:"0 2rem"}}>Home</a>
         </Link>
-<Link  href="/">
-          <a>Home</a>
+        <Link href="/posts">
+          <a style={{margin:"0 2rem"}}>Posts</a>
         </Link>
     </NavLink>
   </HeaderTop>

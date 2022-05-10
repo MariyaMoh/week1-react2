@@ -4,6 +4,8 @@ import { getPost, Post } from "../../services/data";
 import styled from "styled-components";
 import Link from "next/link";
 import { Header } from "../../components/Header";
+import {motion} from "framer-motion";
+
 
 function sendPost() {
   const title = prompt("What is the title of the post?") || "No post";
@@ -64,8 +66,18 @@ export default function Posts({ post }: IndexPageProps) {
       {post.map(({ title, description, image }, index) => (
         <Link key={title} href={`/posts/${index}`}>
           <Card>
-            <h1>{title}</h1>
-            <p>{description}</p>
+            
+            <motion.h1
+                 initial={{ y: -300, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 300, opacity: 0 }}
+            >{title}</motion.h1>
+
+            <motion.p
+                 initial={{ y: -300, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 300, opacity: 0 }}
+            >{description}</motion.p>
             <img src={image} alt={"title"} />
           </Card>
         </Link>

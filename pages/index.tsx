@@ -3,7 +3,9 @@ import { GetServerSidePropsResult } from "next";
 import { getPost, Post } from "../services/data";
 import { useState } from "react";
 import styled from "styled-components";
- import { Header } from "../components/Header";
+import { Header } from "../components/Header";
+import { motion } from "framer-motion";
+
 
 
 
@@ -37,7 +39,7 @@ export default function IndexPage({ post }: IndexPageProps) {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
-  function sendPost(e) {
+  function sendPost(e:any) {
     e.preventDefault();
     axios.post("/api/post", {
       title,
@@ -61,7 +63,16 @@ export default function IndexPage({ post }: IndexPageProps) {
     /> */}
 
      
-          <h3>Enter the title :</h3>
+          <motion.h3
+            transition={{ type: "spring", velocity: 10, stiffness: 30 }}
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 300, opacity: 0 }}> 
+            Enter the title :</motion.h3>
+
+
+
+
           <input
             onChange={(e) => setTitle(e.target.value)}
             type="text"
@@ -69,14 +80,25 @@ export default function IndexPage({ post }: IndexPageProps) {
           />
         </div>
         <div>
-           <h3>Enter your Description :</h3>
+           <motion.h3
+             transition={{ type: "spring", velocity: 10, stiffness: 30 }}
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 300, opacity: 0 }}> 
+           Enter your Description :</motion.h3>
           <textarea
             onChange={(e) => setDescription(e.target.value)}
             value={description}
           />
         </div>
         <div>
-           <h3>Past your Image URL</h3>
+           <motion.h3
+           
+             transition={{ type: "spring", velocity: 10, stiffness: 30 }}
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 300, opacity: 0 }}> 
+           Past your Image URL</motion.h3>
           <input
             onChange={(e) => setImage(e.target.value)}
             type="text"
